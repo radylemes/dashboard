@@ -10,10 +10,12 @@ Conhecimentos necessários:
 - Jenkins
 - Gitlab
 - Python
+- Logica de programação
 
-> Python é muito foda
+> Python
 
 ``` python
 for i in range(10):
     print('python é soda')
-```x
+```
+
