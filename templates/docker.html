@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
+
 <table class="table table-hover table-dark">
     <thead>
         <tr>
@@ -12,7 +13,29 @@
         </tr>
     </thead>
     <tbody>
+        {% for c in context.containers %}
+        <tr>
+            <th scope="row">{{c.name}}</th>
+            <td> {{ c.short_id }}</td>
+            <td> {{ c.image.tags[0] }}</td>
+            <td> {{ c.status }}</td>
+            <td>
+                <div class="row">
+                    <div class="col-6">
+                        <a href="/docker/start/{{ c.short_id }}">
+                        <i class="fas fa-play"> </i>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="/docker/stop/{{ c.short_id }}">
+                        <i class="fas fa-stop"> </i>
+                    </a>
+                    </div>
+                </div>
+            </td>
 
+        </tr>
+        {% endfor %}
     </tbody>
 </table>
 {% endblock %}

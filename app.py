@@ -20,9 +20,10 @@ app.register_blueprint(blueprints.jenkins.blueprint)
 @app.route('/', methods=[ 'GET'])
 def index():
     return flask.redirect('/docker')
+    
 if __name__ == '__main__':
     
     os.environ['FLASK_APP'] = 'app.py'
     os.environ['FLASK_ENV'] = 'development'
 
-    app.run()
+    app.run( host='0.0.0.0')
