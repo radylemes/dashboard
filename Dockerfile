@@ -8,7 +8,7 @@ WORKDIR /app
 # copia o diretorio para dentro do container
 ADD . /app
 
-# instala as dependencias do projeto
+# atualiza o pip e instala as dependencias do projeto
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
