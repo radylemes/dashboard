@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<!--
+{{ context.commits }}
+-->
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Autor</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mensagem</th>
+            <th scope="col">Data do Comite</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for j in context.commits %}
+        <tr>
+            <th scope="row">{{j.committer_name}}</th>
+            <td> {{ j.committer_email }}</td>
+            <td> {{ j.title }}</td>
+            <td> {{ j.committed_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
